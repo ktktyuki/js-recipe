@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScriptで遊んでみよう</title>
-</head>
-<body>
-  <div id="display">ここに何かが表示される</div>
-  <button id="button">クリック！</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScriptで遊んでみよう</title>
+  </head>
+  <body>
+    <!-- html -->
+    <!-- jsで使う場合id属性が必要-->
+    <div id="display">ここに何かが表示される</div>
+    <button id="button">クリック！</button>
 
-  <script>
-    // カウンターアプリに発展させてみましょう
+    <!--javascript-->
+    <script>
+      // カウンターアプリに発展させてみましょう
+      // const 変数の宣言
+      //const 変数名
+      const display = document.getElementById("display")
+      const button = document.getElementById("button")
+      let count = 0
+      //値の種類
+      //数値number
+      //文字列String->任意のやつ（ボタンなど）
+      //関数
+      //上２行が要素取得のコード
 
-    const display = document.getElementById("display")
-    const button = document.getElementById("button")
-    button.onclick = function() {
-      display.textContent = "クリックされた！！"
-    }
-  </script>
-</body>
+      //表示を変えるコード
+      //buttonは最初に宣言した
+      button.onclick = function() {
+        count += 1
+        display.textContent = count
+      }
+    </script>
+  </body>
 </html>
