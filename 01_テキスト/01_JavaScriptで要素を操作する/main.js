@@ -9,6 +9,7 @@ for (const button of buttons.children) {
     alert("clicked: " + button.textContent)
   }
 }
+console.dir()
 
 // 要素を変更する - textContent
 const elementTextContent = document.getElementById("element-textContent")
