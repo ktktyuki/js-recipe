@@ -30,16 +30,7 @@ genkiFunction2()
 //3 3が含まれているとき元気になる
 const genkiFunction3 = function(number) {
   for (let l = 1; l <= number; l++) {
-    const x1 = l / 10
-    const x2 = l / 100
-    const x3 = l / 1000
-    if (
-      l % 3 === 0 ||
-      l % 10 === 3 ||
-      x1 % 10 === 3 ||
-      x2 % 10 === 3 ||
-      x3 % 10 === 3
-    ) {
+    if (l % 3 === 0 || String(l).includes("3")) {
       console.log(l + "!!!!!!")
     } else {
       console.log(l)
