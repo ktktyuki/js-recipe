@@ -37,4 +37,17 @@ const genkiFunction3 = function(number) {
     }
   }
 }
-genkiFunction3(100)
+genkiFunction3()
+
+//発展問題3
+let n = 1
+const genkiFunction4 = function() {
+  if (n % 3 === 0) {
+    console.log(n + "!!!!!!!")
+    n += 1
+  } else {
+    console.log(n)
+    n += 1
+  }
+}
+setInterval(genkiFunction4, 100)

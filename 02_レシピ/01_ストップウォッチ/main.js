@@ -18,4 +18,5 @@ button.onclick = function() {
     button.textContent = "start"
   }
 }
-//発展２　ボタンを押してからromを通って実行されるまでのラグが生じるから
+//発展２ボタンを押してからromを通って実行されるまでのラグが生じるから
+//発展３わからない
