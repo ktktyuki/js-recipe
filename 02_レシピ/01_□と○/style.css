@@ -6,7 +6,13 @@
 
 .rounded {
   border-radius: 50px;
+  background-color: black;
 }
+.triangle {
+  border-bottom: 50px;
+  background-color: black;
+}
+
 .transition {
   transition: all 1s;
 }
