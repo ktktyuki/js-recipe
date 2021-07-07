@@ -1,13 +1,13 @@
 const figure = document.getElementById("figure")
 
 figure.onclick = function() {
-  if (figure instanceof square) {
+  if (figure.classList.contains("square")) {
+    figure.classList.add("rounded")
     figure.classList.remove("square")
-    figure.classList.add("circle")
-  } else if (figure instanceof "circle") {
-    figure.classList.remove("circle")
+  } else if (figure.classList.contains("rounded")) {
+    figure.classList.remove("rounded")
     figure.classList.add("triangle")
-  } else {
+  } else if (figure.classList.contains("triangle")) {
     figure.classList.remove("triangle")
     figure.classList.add("square")
   }
