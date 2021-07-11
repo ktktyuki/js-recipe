@@ -23,7 +23,7 @@ const addButton = document.getElementById("add-button")
 //   card.append(deleteButton)
 // }
 
-addButton.onkeypressed(KeyEvent.) = function() {
+addButton.onclick() = function() {
   //カードを作成
   const card = createCard(inputElement.value)
   container.append(card)
