@@ -9,20 +9,19 @@
   <body>
     <input id="memo-input"></input>
     <button id="add-button">追加</button>
+    <button id="sort-button">並び替える</button>
     <div id="memo-container"></div>
     
     <script>
       const memoInput=document.getElementById("memo-input")
       const addButton=document.getElementById("add-button")
       const memoContainer=document.getElementById("memo-container")
-      
+      const sortButton= document.getElementById("sort-button")
+
       let memos=["おはよう","こんにちは","こんばんは"]
 
-      addButton.onclick=function(){
-        
-        memos.push(memoInput.value)
-        //memoContainrの中身を消す
-        memoContainer.innerHTML=""
+const dry=function(){
+  memoContainer.innerHTML=""
         
         for (let n = 0; n < memos.length; n++){
         // divタグを作る(この時点では、cardは空で、場所も指定されていない)
@@ -32,7 +31,41 @@
         // memoContainerに追加
         memoContainer.append(card)
       }
+}
+
+      
+      addButton.onclick=function(){
+        
+        memos.push(memoInput.value)
+dry()
+
+        //memoContainrの中身を消す
+       /* memoContainer.innerHTML=""
+        
+        for (let n = 0; n < memos.length; n++){
+        // divタグを作る(この時点では、cardは空で、場所も指定されていない)
+        const card = document.createElement("div")
+        
+        card.textContent=memos[n]
+        // memoContainerに追加
+        memoContainer.append(card)
+      }*/
     }
+    sortButton.onclick = function(){
+      memos.sort();
+     /* memoContainer.innerHTML=""
+      for (let n = 0; n < memos.length; n++){
+        // divタグを作る(この時点では、cardは空で、場所も指定されていない)
+        const card = document.createElement("div")
+        
+        card.textContent=memos[n]
+        // memoContainerに追加
+        memoContainer.append(card)
+      }*/
+dry()
+
+    }
+
     </script>
   </body>
 </html>
