@@ -18,35 +18,39 @@ const buttonClear = document.getElementById("button-clear")
 let count = ""
 
 //ボタンをクリックした時の処理を登録
-equalButton.onclick = function(count) {
+equalButton.onclick = function() {
   if (String(count).includes("+")) {
-    const plus = count.sprit("+")
-    let count = 0
+    const plus = count.split("+")
+    let temp = 0
     for (let i = 0; i < plus.length; i++) {
-      count += Number(plus[i])
+      temp += Number(plus[i])
     }
-    display.textContent = count
+    display.textContent = temp
+    count = temp
   } else if (String(count).includes("-")) {
-    const minus = count.sprit("-")
-    let count = 0
-    for (let i = 0; i < minus.length; i++) {
-      count -= Number(minus[i])
+    const minus = count.split("-")
+    let temp = 0
+    for (let i = 0; i < minus.length - 1; i++) {
+      temp = Number(minus[i]) - Number(minus[i + 1])
     }
-    display.textContent = count
+    display.textContent = temp
+    count = temp
   } else if (String(count).includes("*")) {
-    const bai = count.sprit("*")
-    let count = 0
-    for (let i = 0; i < bai.length; i++) {
-      count *= Number(bai[i])
+    const bai = count.split("*")
+    let temp = 0
+    for (let i = 0; i < bai.length - 1; i++) {
+      temp = Number(bai[i]) * Number(bai[i + 1])
     }
-    display.textContent = count
+    display.textContent = temp
+    count = temp
   } else if (String(count).includes("÷")) {
-    const waru = count.sprit("÷")
-    let count = 0
-    for (let i = 0; i < waru.length; i++) {
-      count += Number(waru[i])
+    const waru = count.split("÷")
+    let temp = 0
+    for (let i = 0; i < waru.length - 1; i++) {
+      temp = Number(waru[i]) / Number(waru[i + 1])
     }
-    display.textContent = count
+    display.textContent = temp
+    count = temp
   }
 }
 buttonClear.onclick = function() {
@@ -88,7 +92,7 @@ button8.onclick = function() {
   display.textContent = count
 }
 button9.onclick = function() {
-  count += "+"
+  count += "9"
   display.textContent = count
 }
 button0.onclick = function() {
