@@ -20,7 +20,7 @@
     </section>
     <section>
       <h3>商品を買う</h3>
-      <button id="buy-button-tea">お茶(100円)</button>
+      <button id="buy-button-tea" disabled>お茶(100円)</button>
       <button id="beer" disabled>ビール(150円)</button>
     </section>
     <section>
@@ -30,59 +30,64 @@
     </section>
     <script>
       // HTML要素を取得する
-      const buyButtonTea = document.getElementById("buy-button-tea")
-      const displayItems = document.getElementById("display-items")
-      const addButton100 = document.getElementById("add-button-100")
-      const displaySaifu = document.getElementById("display-saifu")
+      const buyButtonTea = document.getElementById("buy-button-tea");
+      const displayItems = document.getElementById("display-items");
+      const addButton100 = document.getElementById("add-button-100");
+      const displaySaifu = document.getElementById("display-saifu");
       const displayJihankiMoney = document.getElementById(
-        "display-jihanki-money",
-      )
-      const otsuriButton = document.getElementById("otsuri")
-      const beerButton = document.getElementById("beer")
+        "display-jihanki-money"
+      );
+      const otsuriButton = document.getElementById("otsuri");
+      const beerButton = document.getElementById("beer");
       // buyButtonTea を押した時の処理
-      buyButtonTea.onclick = function() {
+      buyButtonTea.onclick = function () {
         if (jihankiMoney >= 100) {
-          displayItems.textContent += "🍵"
-          jihankiMoney -= 100
-          displayJihankiMoney.textContent = jihankiMoney
+          displayItems.textContent += "🍵";
+          jihankiMoney -= 100;
+          displayJihankiMoney.textContent = jihankiMoney;
         }
-        disabledfunction()
-      }
-      let saifu = 1000
-      let jihankiMoney = 0
+        disabledfunction();
+      };
+      let saifu = 1000;
+      let jihankiMoney = 0;
 
-      addButton100.onclick = function() {
+      addButton100.onclick = function () {
         if (saifu >= 100) {
-          saifu -= 100
-          jihankiMoney += 100
-          displaySaifu.textContent = saifu
-          displayJihankiMoney.textContent = jihankiMoney
+          saifu -= 100;
+          jihankiMoney += 100;
+          displaySaifu.textContent = saifu;
+          displayJihankiMoney.textContent = jihankiMoney;
         }
-        disabledfunction()
-      }
-      otsuriButton.onclick = function() {
-        saifu += jihankiMoney
-        jihankiMoney = 0
-        displaySaifu.textContent = saifu
-        displayJihankiMoney.textContent = jihankiMoney
-        disabledfunction()
-      }
+        disabledfunction();
+      };
+      otsuriButton.onclick = function () {
+        saifu += jihankiMoney;
+        jihankiMoney = 0;
+        displaySaifu.textContent = saifu;
+        displayJihankiMoney.textContent = jihankiMoney;
+        disabledfunction();
+      };
 
-      beerButton.onclick = function() {
+      beerButton.onclick = function () {
         if (jihankiMoney >= 150) {
-          displayItems.textContent += "🍺"
-          jihankiMoney -= 150
-          displayJihankiMoney.textContent = jihankiMoney
+          displayItems.textContent += "🍺";
+          jihankiMoney -= 150;
+          displayJihankiMoney.textContent = jihankiMoney;
         }
-        disabledfunction()
-      }
-      const disabledfunction = function() {
-        if (jihankiMoney <= 150) {
-          beerButton.setAttribute("disabled", true)
+        disabledfunction();
+      };
+      const disabledfunction = function () {
+        if (jihankiMoney < 150) {
+          beerButton.setAttribute("disabled", true);
         } else {
-          beerButton.removeAttribute("disabled")
+          beerButton.removeAttribute("disabled");
         }
-      }
+        if (jihankiMoney < 100) {
+          buyButtonTea.setAttribute("disabled", true);
+        } else {
+          buyButtonTea.removeAttribute("disabled");
+        }
+      };
     </script>
   </body>
 </html>
