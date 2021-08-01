@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+https://ktktyuki.app/answer.html<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +16,10 @@
       <h2>口座残高</h2>
       <div>残高：{{zandakaMoney}}円</div>
       <h2>取引記録</h2>
-      <div v-for="kiroku in kirokus">{{kiroku}}</div>
+      <div v-for="log in logs">
+        <div>日付： {{log.date}}</div>
+        <div>操作： {{log.type}}</div>
+        <div>金額： {{log.money}}</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="main.js"></script>

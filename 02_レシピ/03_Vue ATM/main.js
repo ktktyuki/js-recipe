@@ -1,33 +1,30 @@
-const now = new Date().toLocaleString({ timeZone: "Asia/Tokyo" })
 // "3/19/2019, 3:29:58 PM"
 new Vue({
   el: "#inputDiv",
   data: {
     inputMoney: 0,
     zandakaMoney: 0,
-    kirokus: [
-      {
-        日にち: now,
-        タイプ: "入金",
-        金額: 1000,
-      },
-      {
-        日にち: now,
-        タイプ: "出金",
-        金額: 1000,
-      },
-    ],
-    log: "",
+    logs: [],
   },
   methods: {
     nyukin: function() {
       this.zandakaMoney += Number(this.inputMoney)
-      //   this.kirokus.splice(0, 0, "日にち：" + now)
-      this.kirokus.push(this.kirokus[0])
+      const now = new Date()
+      this.logs.push({
+        date: now,
+        type: "入金",
+        money: this.inputMoney,
+      })
       console.log(this.kirokus)
     },
     shukkin: function() {
       this.zandakaMoney -= Number(this.inputMoney)
+      const now = new Date()
+      this.logs.push({
+        date: now,
+        type: "出金",
+        money: this.inputMoney,
+      })
     },
   },
 })
