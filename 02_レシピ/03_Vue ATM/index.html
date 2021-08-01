@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="inputDiv">
+      <h2>入力画面</h2>
+      <input type="number" v-model="inputMoney" />
+      <div>入力金額：{{inputMoney}}円</div>
+      <button v-on:click="nyukin">入金</button>
+      <button v-on:click="shukkin">出金</button>
+      <h2>口座残高</h2>
+      <div>残高：{{zandakaMoney}}円</div>
+      <h2>取引記録</h2>
+      <div v-for="kiroku in kirokus">{{kiroku}}</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
